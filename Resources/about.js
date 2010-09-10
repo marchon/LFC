@@ -107,7 +107,7 @@ facebookButton.addEventListener('click', function(e)
 mapButton.addEventListener('click', function(e)
 {
 	var newWin = Titanium.UI.createWindow({
-		title:"Get a map to LFC",
+		title:"Get a Map to LFC",
 		url:"map.js",
 		barColor:'#111',
 		backgroundColor:"#222",

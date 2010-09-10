@@ -53,7 +53,7 @@ function loadEvents()
 				width:250,
 				textAlign:'left',
 				highlightedColor:"#FFF",
-				font:{fontSize:18, fontWeight:"bold"}
+				font:{fontSize:16, fontWeight:"bold"}
 			});
 			rowView.add(messageTitleLabel);
 			

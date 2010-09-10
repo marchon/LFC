@@ -65,6 +65,9 @@ stopButton.addEventListener("click", function(){
 webView.addEventListener("beforeload", function(e)
 {
 	win.toolbar = [backButton,flexSpace,forwardButton,flexSpace,stopButton,flexSpace,openSafariButton];
+	
+	// Disable the openSafariButton while the page is loading
+	openSafariButton.enabled = "false";
 });
 
 // webView back/forward buttons event listener
@@ -85,5 +88,8 @@ webView.addEventListener("load", function()
 	else {
 		forwardButton.enabled = "false";
 	}
+	
+	// Enable the openSafariButton after the page is done loading
+	openSafariButton.enabled = "true";
 });
 
