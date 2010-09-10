@@ -6,7 +6,7 @@ win.layout = "vertical";
 var aboutImage = Titanium.UI.createImageView({
 	image:"images/church.jpg",
 	preventDefaultImage:true,
-	defaultImage:"loading192.png",
+	defaultImage:"icons/loading192.png",
 	height:140,
 	bottom:10,
 	width:320,

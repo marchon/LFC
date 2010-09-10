@@ -6,7 +6,7 @@ win.layout = "vertical";
 var messageImage = Titanium.UI.createImageView({
 	image:win.message_image,
 	preventDefaultImage:true,
-	defaultImage:"loading192.png",
+	defaultImage:"icons/loading192.png",
 	height:192,
 	width:"auto",
 	top:0

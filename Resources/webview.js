@@ -10,7 +10,7 @@ win.add(webView);
 
 // Buttons
 var backButton = Titanium.UI.createButton({
-	image:"leftArrow.png",
+	image:"icons/leftArrow.png",
 	enabled:'false'
 });
 
