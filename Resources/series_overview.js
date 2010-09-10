@@ -97,7 +97,7 @@ function loadMessages(){
 		var tableHeader = Titanium.UI.createImageView({
 			image:win.series_image,
 			preventDefaultImage:true,
-			defaultImage:"icons/loading192.png",
+			defaultImage:"images/loading192.png",
 			height:192,
 			width:"auto",
 			top:0

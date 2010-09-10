@@ -52,7 +52,7 @@ function loadSeries()
 				width:100,
 				image:series_thumb,
 				preventDefaultImage:true,
-				defaultImage:"icons/loading60.png"
+				defaultImage:"images/loading60.png"
 			});
 			series_view.add(series_image_view);
 			
