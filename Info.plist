@@ -37,7 +37,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1284092367</string>
+	<string>1.0.1284091359</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
@@ -60,7 +60,5 @@
 	    <array>
 	        <string>audio</string>
 	    </array>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>
