@@ -40,7 +40,7 @@ var aboutWindow = Titanium.UI.createWindow({
 });
 
 var aboutTab = Titanium.UI.createTab({
-	icon:'icons2/icon_information.png',
+	icon:'icons/icon_information.png',
 	title:'About LFC',
 	window:aboutWindow
 });
