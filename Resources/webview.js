@@ -39,6 +39,10 @@ var openSafariButton = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.ACTION
 });
 
+openSafariButton.addEventListener("click", function(){
+	Titanium.Platform.openURL(win.pageURL);
+});
+
 var flexSpace = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 });
