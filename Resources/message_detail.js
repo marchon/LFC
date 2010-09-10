@@ -51,13 +51,12 @@ var audioButton = Titanium.UI.createButton({
 	left:14,
 	botton:10,
 	width:140,
-	backgroundImage:"color_000.png",
-	backgroundSelectedImage:"color_333.png",
-	borderRadius:8,
-	borderWidth:1,
-	borderColor:"#FFF",
+	backgroundImage:"images/media_button.png",
+	backgroundSelectedImage:"images/media_button_selected.png",
 	title:"Audio Only",
-	font:{fontSize:14}
+	color:"#444",
+	selectedColor:"#FFF",
+	font:{fontSize:16, fontWeight:"bold"}
 });
 
 var videoButton = Titanium.UI.createButton({
@@ -65,13 +64,12 @@ var videoButton = Titanium.UI.createButton({
 	left:168,
 	botton:10,
 	width:140,
-	backgroundImage:"color_000.png",
-	backgroundSelectedImage:"color_333.png",
-	borderRadius:8,
-	borderWidth:1,
-	borderColor:"#FFF",
+	backgroundImage:"images/media_button.png",
+	backgroundSelectedImage:"images/media_button_selected.png",
 	title:"Watch Video",
-	font:{fontSize:14}
+	color:"#444",
+	selectedColor:"#FFF",
+	font:{fontSize:16, fontWeight:"bold"}
 });
 
 mediaHolder.add(audioButton);

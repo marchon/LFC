@@ -23,6 +23,7 @@ var progressLabel = Titanium.UI.createLabel({
 win.add(progressLabel);
 
 // Create the audio player
+Titanium.Media.defaultAudioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAYBACK;
 var audioPlayer = Ti.Media.createAudioPlayer({
 	url:win.message_audiofile
 });
