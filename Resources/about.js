@@ -25,19 +25,18 @@ var aboutText = Titanium.UI.createLabel({
 });
 win.add(aboutText);
 
-// Create Audio & Video buttons
+// Create buttons
 var twitterButton = Titanium.UI.createButton({
 	bottom:10,
 	left:10,
 	right:10,
 	height:35,
-	backgroundImage:"color_000.png",
-	backgroundSelectedImage:"color_333.png",
-	borderRadius:10,
-	borderWidth:1,
-	borderColor:"#FFF",
+	backgroundImage:"images/about_button.png",
+	backgroundSelectedImage:"images/about_button_selected.png",
+	color:"#444",
+	selectedColor:"#FFF",
 	title:"Follow LFC on Twitter",
-	font:{fontSize:14}
+	font:{fontSize:16, fontWeight:"bold"}
 });
 win.add(twitterButton);
 
@@ -46,13 +45,12 @@ var facebookButton = Titanium.UI.createButton({
 	right:10,
 	bottom:10,
 	height:35,
-	backgroundImage:"color_000.png",
-	backgroundSelectedImage:"color_333.png",
-	borderRadius:10,
-	borderWidth:1,
-	borderColor:"#FFF",
+	backgroundImage:"images/about_button.png",
+	backgroundSelectedImage:"images/about_button_selected.png",
+	color:"#444",
+	selectedColor:"#FFF",
 	title:"Like LFC on Facebook",
-	font:{fontSize:14}
+	font:{fontSize:16, fontWeight:"bold"}
 });
 win.add(facebookButton);
 
@@ -61,13 +59,12 @@ var mapButton = Titanium.UI.createButton({
 	right:10,
 	bottom:10,
 	height:35,
-	backgroundImage:"color_000.png",
-	backgroundSelectedImage:"color_333.png",
-	borderRadius:10,
-	borderWidth:1,
-	borderColor:"#FFF",
+	backgroundImage:"images/about_button.png",
+	backgroundSelectedImage:"images/about_button_selected.png",
+	color:"#444",
+	selectedColor:"#FFF",
 	title:"Get directions to LFC",
-	font:{fontSize:14}
+	font:{fontSize:16, fontWeight:"bold"}
 });
 win.add(mapButton);
 
