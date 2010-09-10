@@ -59,25 +59,11 @@ var twitterTab = Titanium.UI.createTab({
 	window:twitterWindow
 });
 
-// /* Map to church */
-// var mapWindow = Titanium.UI.createWindow({
-// 	title:'Get a map to LFC',
-// 	backgroundColor:"#FFF",
-// 	barColor:"#111",
-// 	url:"map.js"
-// });
-// 
-// var mapTab = Titanium.UI.createTab({
-// 	icon:"icons/103-map.png",
-// 	title:"Map",
-// 	window:mapWindow
-// });
-
 //  add tabs
 tabGroup.addTab(messagesTab);
 tabGroup.addTab(eventsTab);
 tabGroup.addTab(twitterTab);
 tabGroup.addTab(aboutTab);
-// tabGroup.addTab(mapTab);
+
 // open tab group
 tabGroup.open();
