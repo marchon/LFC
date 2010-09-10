@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+<id>com.lfc.lfc</id>
+<name>LFC</name>
+<version>1.0</version>
+<publisher>Lebanon Family Church</publisher>
+<url>http://lebanonfamilychurch.org</url>
+<description>No description provided</description>
+<copyright>2010 by Lebanon Family Church</copyright>
+<icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+<guid>e4609b53-6059-49bd-a900-9b6b8199429f</guid>
+</ti:app>
