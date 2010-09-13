@@ -31,20 +31,6 @@ var eventsTab = Titanium.UI.createTab({
 	window:eventsWindow
 });
 
-/* About Tab */
-var aboutWindow = Titanium.UI.createWindow({
-	title:'About LFC',
-	backgroundColor:'#222',
-	barColor:'#111',
-	url:'about.js'
-});
-
-var aboutTab = Titanium.UI.createTab({
-	icon:'icons/icon_information.png',
-	title:'About LFC',
-	window:aboutWindow
-});
-
 /* Twitter Tab */
 var twitterWindow = Titanium.UI.createWindow({
 	title:"@lebfamilychurch on Twitter",
@@ -57,6 +43,20 @@ var twitterTab = Titanium.UI.createTab({
 	icon:"icons/08-chat.png",
 	title:"Twitter",
 	window:twitterWindow
+});
+
+/* About Tab */
+var aboutWindow = Titanium.UI.createWindow({
+	title:'About LFC',
+	backgroundColor:'#222',
+	barColor:'#111',
+	url:'about.js'
+});
+
+var aboutTab = Titanium.UI.createTab({
+	icon:'icons/icon_information.png',
+	title:'About LFC',
+	window:aboutWindow
 });
 
 //  add tabs
