@@ -21,7 +21,7 @@ var aboutText = Titanium.UI.createLabel({
 	right:20,
 	bottom:18,
 	color:"#FFF",
-	font:{fontSize:14}
+	font:{fontSize:16}
 });
 win.add(aboutText);
 
@@ -63,7 +63,7 @@ var mapButton = Titanium.UI.createButton({
 	backgroundSelectedImage:"images/about_button_selected.png",
 	color:"#444",
 	selectedColor:"#FFF",
-	title:"Get directions to LFC",
+	title:"Get Directions to LFC",
 	font:{fontSize:16, fontWeight:"bold"}
 });
 win.add(mapButton);
@@ -107,7 +107,7 @@ facebookButton.addEventListener('click', function(e)
 mapButton.addEventListener('click', function(e)
 {
 	var newWin = Titanium.UI.createWindow({
-		title:"Get a Map to LFC",
+		title:"Get Directions to LFC",
 		url:"map.js",
 		barColor:'#111',
 		backgroundColor:"#222",

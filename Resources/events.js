@@ -14,7 +14,7 @@ function loadEvents()
 	var rowData = [];
 	var xhr = Titanium.Network.createHTTPClient({timeout:30000});
 
-	xhr.open("GET", "http://dev.lebanonfamilychurch.org/api/events");
+	xhr.open("GET", "http://lebanonfamilychurch.org/api/events");
 	
 	// Build the UI of events
 	xhr.onload = function()

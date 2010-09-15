@@ -16,7 +16,7 @@ function loadMessages(){
 
 	var xhr = Titanium.Network.createHTTPClient({timeout:30000});
 
-	xhr.open("GET", "http://dev.lebanonfamilychurch.org/api/messages/"+win.series_id);
+	xhr.open("GET", "http://lebanonfamilychurch.org/api/messages/"+win.series_id);
 
 	xhr.onload = function()
 	{
