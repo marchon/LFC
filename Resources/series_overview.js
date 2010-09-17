@@ -146,4 +146,25 @@ function loadMessages(){
 	xhr.send();
 }
 
-loadMessages();
+// If there's no network, warn the user
+if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE)
+{
+	// Build label that shows error message
+	var errorLabel = Titanium.UI.createLabel({
+		text:"No internet connection. Messages can not be loaded at this time.",
+		height:"auto",
+		width:"auto",
+		top:20,
+		right:20,
+		bottom:20,
+		left:20,
+		color:"#FFF"
+	});
+	
+	win.add(errorLabel);
+	
+	alert("Your device doesn't have an internet connection");
+}
+else {
+	loadMessages();
+}
