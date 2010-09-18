@@ -11,16 +11,6 @@ win.rightNavButton = shareButton;
 /* Share button event listener */
 shareButton.addEventListener("click", function()
 {
-	// What's the URL?
-	// win.url_title
-	
-	// http://twitter.com/?status=[url encoded]
-	
-	function urlencode (str) {
-		str = (str+'').toString();
-		return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');
-	}
-	
 	Titanium.Platform.openURL("http://twitter.com/?status=Loving this message from @lebfamilychurch: "+win.message_url);
 });
 
