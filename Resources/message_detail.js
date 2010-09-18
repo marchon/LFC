@@ -2,6 +2,18 @@
 var win = Titanium.UI.currentWindow;
 win.layout = "vertical";
 
+/* Share Toolbar button */
+var shareButton = Titanium.UI.createButton({
+	title:"Tweet"
+});
+win.rightNavButton = shareButton;
+
+/* Share button event listener */
+shareButton.addEventListener("click", function()
+{
+	Titanium.Platform.openURL("http://twitter.com/?status=Loving this message from @lebfamilychurch: "+win.message_url);
+});
+
 // Create the message image view
 var messageImage = Titanium.UI.createImageView({
 	image:win.message_image,

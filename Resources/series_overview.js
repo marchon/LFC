@@ -26,6 +26,7 @@ function loadMessages(){
 		for (var i = 0; i < messages.length; i++)
 		{
 			var title = messages[i].title; // Title of the message
+			var url = messages[i].url; // Title of the message
 			var date = messages[i].date; // Date of the message
 			var week_number = i + 1; // The week number
 
@@ -116,7 +117,7 @@ function loadMessages(){
 			var rowdata = e.rowData;
 
 			var newWin = Titanium.UI.createWindow({
-				title:rowdata.title,
+				title:messages[index].title,
 				url:"message_detail.js",
 				backgroundColor:'#222',
 				barColor:'#111'
@@ -125,6 +126,7 @@ function loadMessages(){
 			// Set some properties for the next window
 			newWin.message_id = messages[index].message_id;
 			newWin.message_title = messages[index].title;
+			newWin.message_url = messages[index].url;
 			newWin.message_image = messages[index].message_image;
 			newWin.message_date = messages[index].date;
 			newWin.message_audiofile = messages[index].message_audiofile;
