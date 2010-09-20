@@ -12,7 +12,7 @@ function loadEvents()
 	spinner.show();
 	
 	var rowData = [];
-	var xhr = Titanium.Network.createHTTPClient({timeout:30000});
+	var xhr = Titanium.Network.createHTTPClient({timeout:15000});
 
 	xhr.open("GET", "http://lebanonfamilychurch.org/api/events");
 	
@@ -108,6 +108,19 @@ function loadEvents()
 		
 		// Add it to the window
 		win.add(eventsTable);
+		
+		// Release the activity indicator
+		spinner.hide();
+		win.remove(spinner);
+	};
+	
+	xhr.onerror = function(){
+		var alertDialog = Titanium.UI.createAlertDialog({
+		    title:"Network Error",
+		    message:"We could not get the information you requested.",
+		    buttonNames: ['OK']
+		});
+		alertDialog.show();
 		
 		// Release the activity indicator
 		spinner.hide();

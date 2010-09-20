@@ -16,22 +16,6 @@ var win = Titanium.UI.currentWindow;
 // });
 // win.add(refreshLabel);
 
-function linkify(text){
-    if (text) {
-        text = text.replace(
-            /((https?\:\/\/)|(www\.))(\S+)(\w{2,4})(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/gi,
-            function(url){
-                var full_url = url;
-                if (!full_url.match('^https?:\/\/')) {
-                    full_url = 'http://' + full_url;
-                }
-                return '<a href="' + full_url + '">' + url + '</a>';
-            }
-        );
-    }
-    return text;
-}
-
 // Function loadTweets()
 function loadTweets()
 {
@@ -45,14 +29,13 @@ function loadTweets()
 	
 	// Empty array "rowData" for our tableview
 	var rowData = [];
-	// Create our HTTP Client and name it "loader"
-	var loader = Titanium.Network.createHTTPClient();
+	// Create our HTTP Client and name it "xhr"
+	var xhr = Titanium.Network.createHTTPClient({timeout:15000});
 	// Sets the HTTP request method, and the URL to get data from
-loader.open("GET","http://api.twitter.com/1/statuses/user_timeline.json?screen_name=lebfamilychurch");
-/*	loader.open("GET","http://api.twitter.com/1/statuses/public_timeline.json");*/
+	xhr.open("GET","http://api.twitter.com/1/statuses/user_timeline.json?screen_name=lebfamilychurch");
 	
 	// Runs the function when the data is ready for us to process
-	loader.onload = function() 
+	xhr.onload = function() 
 	{
 		var tweets = eval('('+this.responseText+')');
 		for (var i = 0; i < tweets.length; i++)
@@ -108,28 +91,21 @@ loader.open("GET","http://api.twitter.com/1/statuses/user_timeline.json?screen_n
 		});
 		//Add the table view to the window
 		win.add(tableView);
+	};
+	
+	xhr.onerror = function(){
+		var alertDialog = Titanium.UI.createAlertDialog({
+		    title:"Network Error",
+		    message:"We could not get the information you requested.",
+		    buttonNames: ['OK']
+		});
+		alertDialog.show();
 		
-		// Remove the loading label from the window
-		// win.remove(refreshLabel);
-		
-		
-		// // Create the refresh button
-		// refreshButton = Titanium.UI.createButton({
-		// 	image:"icons2/icon_refresh.png"
-		// });
-		// win.rightNavButton = refreshButton;
-		// // When you tap the refresh button, this happens
-		// refreshButton.addEventListener("click", function()
-		// {
-		// 	win.remove(tableView);
-		// 	win.add(refreshLabel);
-		// 	loadTweets();
-		// 	// Remove refresh tweets label
-		// });
-		
-		
+		// Release the activity indicator
+		spinner.hide();
+		win.remove(spinner);
 	};
 	// Send the HTTP request
-	loader.send();
+	xhr.send();
 }
 loadTweets();

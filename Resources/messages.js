@@ -14,7 +14,7 @@ function loadSeries()
 	
 	// Create empty rowData for our tableview
 	var rowData = [];
-	var xhr = Titanium.Network.createHTTPClient({timeout:30000});
+	var xhr = Titanium.Network.createHTTPClient({timeout:15000});
 
 	xhr.open("GET", "http://lebanonfamilychurch.org/api/series/");
 
@@ -110,6 +110,18 @@ function loadSeries()
 		// Add the table to the window
 		win.add(seriesTable);
 
+		// Release the activity indicator
+		spinner.hide();
+		win.remove(spinner);
+	};
+	xhr.onerror = function(){
+		var alertDialog = Titanium.UI.createAlertDialog({
+		    title:"Network Error",
+		    message:"We could not get the information you requested.",
+		    buttonNames: ['OK']
+		});
+		alertDialog.show();
+		
 		// Release the activity indicator
 		spinner.hide();
 		win.remove(spinner);
