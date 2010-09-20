@@ -4,15 +4,49 @@ win.layout = "vertical";
 
 /* Share Toolbar button */
 var shareButton = Titanium.UI.createButton({
-	title:"Tweet"
+	title:"Share"
 });
 win.rightNavButton = shareButton;
 
+
+
+
+/// Sharing ///
+
+var dialog = Titanium.UI.createOptionDialog({
+    title: 'Where do you want to share this?',
+    options: ['Post to Twitter', 'Email to a Friend', 'Cancel'],
+    cancel:2
+});
+
+var emailDialog = Ti.UI.createEmailDialog({
+	subject:"You have to hear this message...",
+	messageBody:"Hey friend,\n\r\n\r I was just listening to a message called \""+win.message_title+"\" from Lebanon Family Church and I thought you would like it.\n\r\n\r Take a look: "+win.message_url+".",
+	barColor:"#111"
+});
+
+// Event Listener for buttons
+dialog.addEventListener("click", function(e){
+	switch(e.index)
+	{
+		case 0: // The Twitter button
+			Titanium.Platform.openURL("http://twitter.com/?status=Listening to "+win.message_url+" (via @lebfamilychurch)");
+			break;
+		case 1: // Email to a friend
+			emailDialog.open();
+			break;
+		case 2: // Cancel button
+			break;
+	}
+});
+
 /* Share button event listener */
 shareButton.addEventListener("click", function()
-{
-	Titanium.Platform.openURL("http://twitter.com/?status=Loving this message from @lebfamilychurch: "+win.message_url);
+{	
+	dialog.show();
 });
+
+/// End Sharing ///
 
 // Create the message image view
 var messageImage = Titanium.UI.createImageView({
