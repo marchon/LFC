@@ -80,7 +80,7 @@ twitterButton.addEventListener('click', function(e)
 		tabBarHidden:true
 	});
 	
-	newWin.pageURL = "http://twitter.com/lebfamilychurch";
+	newWin.pageURL = "http://mobile.twitter.com/lebfamilychurch";
 	
 	// Now open the window
 	Titanium.UI.currentTab.open(newWin,{animated:true});
