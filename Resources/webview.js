@@ -2,7 +2,7 @@
 var win = Titanium.UI.currentWindow;
 // Titanium.UI.TabGroup.hide();
 
-// Web Buttons
+// webView
 var webView = Titanium.UI.createWebView({
 	url:win.pageURL
 });
@@ -14,51 +14,49 @@ var backButton = Titanium.UI.createButton({
 	enabled:'false'
 });
 
-backButton.addEventListener("click", function(){
-	webView.goBack();
-});
-
 var forwardButton = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.PLAY,
 	enabled:'false'
-});
-
-forwardButton.addEventListener("click", function(){
-	webView.goForward();
 });
 
 var refreshButton = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.REFRESH		
 });
 
-refreshButton.addEventListener("click", function(){
-	webView.reload();
-});
-
 var openSafariButton = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.ACTION
-});
-
-openSafariButton.addEventListener("click", function(){
-	Titanium.Platform.openURL(win.pageURL);
 });
 
 var flexSpace = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 });
 
-
 var stopButton = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.STOP,
 	enabled:true
+});
+
+// Button Listeners
+backButton.addEventListener("click", function(){
+	webView.goBack();
+});
+
+forwardButton.addEventListener("click", function(){
+	webView.goForward();
+});
+
+refreshButton.addEventListener("click", function(){
+	webView.reload();
+});
+
+openSafariButton.addEventListener("click", function(){
+	Titanium.Platform.openURL(win.pageURL);
 });
 
 stopButton.addEventListener("click", function(){
 	webView.stopLoading();
 	win.toolbar = [backButton,flexSpace,forwardButton,flexSpace,refreshButton,flexSpace,openSafariButton];
 });
-
-
 
 // Listeners
 
